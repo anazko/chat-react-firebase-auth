@@ -17,10 +17,11 @@ firebase.initializeApp({
 
 export const Context = createContext(null)
 const auth = firebase.auth()
+const firestore = firebase.firestore()
 
 ReactDOM.render(
   <React.StrictMode>
-    <Context.Provider value={{ auth }}>
+    <Context.Provider value={{ firebase, auth, firestore }}>
       <App />
     </Context.Provider>
   </React.StrictMode>,
